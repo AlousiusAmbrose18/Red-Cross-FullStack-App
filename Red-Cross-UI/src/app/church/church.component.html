@@ -1,0 +1,25 @@
+<div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <input class="form-control mr-sm-2" type="search" placeholder="Enter Church Name here" 
+    id="churchName" name="churchName" [(ngModel)]="churchName"
+        (keyup.enter)="getSearchResult()">
+  </div>
+
+<div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <!-- <div class="col col-1">Id</div> -->
+        <div class="col col-2">Church Name</div>
+        <div class="col col-3">Address</div>
+        <div class="col col-4">Distance</div>
+      </li>
+      <li class="table-row" *ngFor="let church of churchList">
+        <!-- <div class="col col-1">{{church.id}}</div> -->
+        <div class="col col-2">{{church.churchName}}</div>
+        <div class="col col-3">{{church.streetName}}, {{church.cityName}}, {{church.state}}. {{church.pincode}}. </div>
+        <div>Distance</div>
+      </li>
+    </ul>
+  </div>
